@@ -4,13 +4,7 @@
     "slug": "moja-biblioteczka",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
@@ -18,24 +12,18 @@
       "supportsTablet": true
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
       "package": "com.yourcompany.mojabiblioteczka",
       "permissions": [
         "android.permission.RECORD_AUDIO"
       ]
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
+    "web": {},
     "plugins": [
       [
         "expo-image-picker",
         {
           "photosPermission": "Aplikacja potrzebuje dostępu do twoich zdjęć, aby dodać okładkę książki.",
-          "cameraPermission": "Aplikacja potrzebuje dostępu do aparatu, aby zrobić zdjęcie okładki książki."
+          "cameraPermission": "Aplikacja potrzebuje dostępu do aparatu, aby zrobić zdjęcie okładки książki."
         }
       ]
     ],
