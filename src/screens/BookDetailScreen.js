@@ -19,7 +19,7 @@ const BookDetailScreen = () => {
 
   const styles = createStyles(theme);
 
-  // Find the book by id (with safety check)
+  // Найти книгу по идентификатору (с проверкой безопасности)
   const book = (books || []).find(book => book.id === id);
 
   if (!book) {

@@ -15,7 +15,7 @@ const OfflineIndicator = ({ style }) => {
   useEffect(() => {
     const unsubscribe = OfflineManager.addListener((event, data) => {
       if (event === 'sync_skipped' && data?.reason === 'no_auth') {
-        setSyncMessage('Требуется авторизация для синхронизации');
+        setSyncMessage('Wymaga autoryzacji do synchronizacji');
         setTimeout(() => setSyncMessage(''), 5000); // Clear message after 5 seconds
       }
     });

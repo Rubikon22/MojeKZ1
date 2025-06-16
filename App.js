@@ -16,8 +16,8 @@
  * 6. OptimizedBookProvider - Zarządzanie księgozbiorem
  * 7. NavigationContainer - Nawigacja między ekranami
  *
- * @author MojeKZ Team
- * @version 2.0
+ *
+ *
  */
 
 import React from 'react';

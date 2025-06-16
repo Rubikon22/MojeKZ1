@@ -27,10 +27,10 @@ const SettingsScreen = () => {
 
   const clearAllData = async () => {
     try {
-      // Clear all books using BookContext
+      // Очистить все книги с помощью BookContext
       await clearAllBooks();
       
-      // Clear remaining AsyncStorage data (theme, etc.)
+      // Очистите оставшиеся данные AsyncStorage (тема и т.д.).
       await AsyncStorage.clear();
       
       Alert.alert('Dane wyczyszczone', 'Wszystkie dane zostaly usuniete.');

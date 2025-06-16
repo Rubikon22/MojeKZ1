@@ -25,7 +25,7 @@ const BookListScreen = () => {
   const [sortBy, setSortBy] = useState('dateAdded');
   const [sortOrder, setSortOrder] = useState('desc');
 
-  // Filter books based on search query and selected status
+  // Фильтруйте книги по поисковому запросу и выбранному статусу
   const filteredBooks = (books || []).filter(book => {
     const matchesSearch = 
       book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -36,7 +36,7 @@ const BookListScreen = () => {
     return matchesSearch && matchesStatus;
   });
 
-  // Sort books based on selected criteria
+  // Сортировка книг по выбранным критериям
   const sortedBooks = [...filteredBooks].sort((a, b) => {
     if (sortBy === 'title') {
       return sortOrder === 'asc' 
@@ -65,10 +65,10 @@ const BookListScreen = () => {
 
   const handleSortOption = (option) => {
     if (sortBy === option) {
-      // Toggle sort order if same option is selected
+      // Переключите порядок сортировки, если выбран тот же вариант
       setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc');
     } else {
-      // Set new sort option with default desc order
+      // Установите новый вариант сортировки с порядком убывания по умолчанию
       setSortBy(option);
       setSortOrder('desc');
     }

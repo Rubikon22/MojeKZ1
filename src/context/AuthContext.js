@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState, useCallback, useMemo } from 'react';
 import { supabase } from '../config/supabase';
 
-// Create context with better default values and type safety
+// Создание контекста с улучшенными значениями по умолчанию и безопасностью типов Точки останова устройств
 const AuthContext = createContext({
   user: null,
   loading: true,
@@ -10,7 +10,7 @@ const AuthContext = createContext({
   signOut: async () => ({ error: new Error('AuthContext not initialized') }),
 });
 
-// Set display name for debugging
+// Установка отображаемого имени для отладки
 AuthContext.displayName = 'AuthContext';
 
 export const useAuth = () => {
@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     let mounted = true;
 
-    // Get current session
+    // Получить текущую сессию
     const initializeAuth = async () => {
       try {
         const { data: { session } = {}, error } = await supabase.auth.getSession();
@@ -52,7 +52,7 @@ export const AuthProvider = ({ children }) => {
 
     initializeAuth();
 
-    // Listen to auth state changes
+    // Прослушивание изменений состояния аутентификации
     const { data: { subscription } = {} } = supabase.auth.onAuthStateChange(
       async (event, session) => {
         try {

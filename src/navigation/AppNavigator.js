@@ -44,7 +44,7 @@ const AuthStack = () => {
   );
 };
 
-// Stack navigator for book-related screens
+// Навигатор стека для экранов, связанных с книгами
 const BookStack = () => {
   return (
     <Stack.Navigator
@@ -79,7 +79,7 @@ const BookStack = () => {
   );
 };
 
-// Main tab navigator
+// Навигатор главной вкладки
 const MainTabs = () => {
   return (
     <Tab.Navigator
@@ -106,7 +106,7 @@ const MainTabs = () => {
   );
 };
 
-// Main App Navigator
+// Главный навигатор приложений
 const AppNavigator = () => {
   const { user, loading } = useAuth();
 

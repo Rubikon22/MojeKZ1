@@ -4,8 +4,8 @@ import { Button, Surface } from 'react-native-paper';
 import { useTheme } from '../context/ThemeContext';
 
 /**
- * Authentication Error Boundary
- * Catches and handles authentication-related initialization errors
+ * Граница ошибок аутентификации
+ * Вылавливает и обрабатывает ошибки инициализации, связанные с аутентификацией
  */
 class AuthErrorBoundary extends React.Component {
   constructor(props) {

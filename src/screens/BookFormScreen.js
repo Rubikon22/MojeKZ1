@@ -27,11 +27,11 @@ const BookFormScreen = () => {
   const { addBook, updateBook } = useBookActions();
   const { theme } = useTheme();
   
-  // Check if we're editing an existing book
+  // Проверьте, редактируем ли мы существующую книгу
   const isEditing = route.params?.isEditing || false;
   const existingBook = route.params?.book;
   
-  // Initial form values
+  // Начальные значения формы
   const initialValues = isEditing
     ? { ...existingBook }
     : {
@@ -44,7 +44,7 @@ const BookFormScreen = () => {
         coverImage: null,
       };
 
-  // Request camera permissions
+  // Запрос разрешений на камеру
   useEffect(() => {
     (async () => {
       if (Platform.OS !== 'web') {

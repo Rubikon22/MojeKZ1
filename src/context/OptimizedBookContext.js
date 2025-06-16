@@ -8,8 +8,8 @@
  * - Obsługę błędów i fallback do lokalnego storage
  * - Integrację z Supabase i lokalnym AsyncStorage
  * 
- * @author MojeKZ Team
- * @version 2.0
+ *
+ *
  */
 
 import React, { 
@@ -62,7 +62,7 @@ const initialState = {
   queuedOperations: 0,           // Liczba operacji oczekujących na synchronizację
 };
 
-// Enhanced reducer with more granular loading states
+// Улучшенный редуктор с более детальными состояниями загрузки
 const bookReducer = (state, action) => {
   switch (action.type) {
     case 'SET_LOADING':
@@ -223,7 +223,7 @@ const bookReducer = (state, action) => {
   }
 };
 
-// Utility functions for data transformation
+// Утилитарные функции для преобразования данных
 const transformBookForSupabase = (book) => ({
   title: book.title,
   author: book.author,
@@ -249,10 +249,10 @@ export const OptimizedBookProvider = ({ children }) => {
   const authContext = useContext(AuthContext);
   
   
-  // Safely extract user with proper error handling
+  // Безопасное извлечение пользователя с правильной обработкой ошибок
   const user = React.useMemo(() => {
     try {
-      // Check if authContext exists and has the expected structure
+      // Проверьте, существует ли authContext и имеет ли он ожидаемую структуру
       if (!authContext || typeof authContext !== 'object') {
         console.warn('AuthContext is not properly initialized');
         return null;
@@ -264,12 +264,12 @@ export const OptimizedBookProvider = ({ children }) => {
     }
   }, [authContext]);
 
-  // Add safety check for authContext
+  // Добавьте проверку безопасности для authContext
   const isAuthReady = React.useMemo(() => {
     return authContext && typeof authContext === 'object' && 'loading' in authContext;
   }, [authContext]);
   
-  // Use ref to track mounted state
+  // Используйте ref для отслеживания состояния монтировки
   const mountedRef = useRef(true);
   
   // Cache for optimistic updates
